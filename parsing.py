@@ -26,10 +26,12 @@ def parsePage(links):
                     idx = headings.index(max(headings))+1
                     heading = heading.find_element(By.XPATH, f"./preceding::h{idx}[1]")
                 ol = element.find_element(By.XPATH, "./following-sibling::ol[1]") #assumption
-                if (ol.text.split('\n')[-1] == ol.text.split('\n')[-2]):
-                    feature_configs[heading.text] = ol.text.split('\n')[:-1]
-                else:
-                    feature_configs[heading.text] = ol.text.split('\n')
+                lis = ol.find_elements(By.CSS_SELECTOR, "li")
+                feature_configs[heading.text] = [li.text for li in lis]
+                # if (ol.text.split('\n')[-1] == ol.text.split('\n')[-2]):
+                #     feature_configs[heading.text] = ol.text.split('\n')[:-1]
+                # else:
+                #     feature_configs[heading.text] = ol.text.split('\n')
         else:
             elements = driver.find_elements(By.CSS_SELECTOR, "table")
             if (len(elements)):
