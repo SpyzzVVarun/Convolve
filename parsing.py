@@ -21,6 +21,10 @@ def parsePage(links):
                         pass
                 idx = headings.index(max(headings))+1
                 heading = element.find_element(By.XPATH, f"./preceding::h{idx}[1]")
+                while ('procedure' in heading.text.lower() or 'before' in heading.text.lower()):
+                    headings[idx-1] = heading.find_element(By.XPATH, f"./preceding::h{idx}[1]").location["y"]
+                    idx = headings.index(max(headings))+1
+                    heading = heading.find_element(By.XPATH, f"./preceding::h{idx}[1]")
                 ol = element.find_element(By.XPATH, "./following-sibling::ol[1]") #assumption
                 if (ol.text.split('\n')[-1] == ol.text.split('\n')[-2]):
                     feature_configs[heading.text] = ol.text.split('\n')[:-1]
@@ -38,10 +42,10 @@ def parsePage(links):
                             pass
                     idx = headings.index(max(headings))+1
                     heading = element.find_element(By.XPATH, f"./preceding::h{idx}[1]")
-                    if 'procedure' in heading.text.lower():
-                        headings[idx-1] = -1
+                    while ('procedure' in heading.text.lower() or 'before' in heading.text.lower()):
+                        headings[idx-1] = heading.find_element(By.XPATH, f"./preceding::h{idx}[1]").location["y"]
                         idx = headings.index(max(headings))+1
-                        heading = element.find_element(By.XPATH, f"./preceding::h{idx}[1]")
+                        heading = heading.find_element(By.XPATH, f"./preceding::h{idx}[1]")
                         
                     if element.get_attribute("outerHTML").lower().count('step') >= 3:
                         lst = []
@@ -54,4 +58,4 @@ def parsePage(links):
                             lst.append(re.sub("\n", "", result))
                         feature_configs[heading.text] = lst
 
-        return feature_configs
+    return feature_configs
