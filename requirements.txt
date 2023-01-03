@@ -1,6 +1,5 @@
 selenium==4.3.0
 streamlit==1.11.0
-re
 json
 seleniumbase
 webdriver-manager
