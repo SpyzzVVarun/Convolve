@@ -3,7 +3,7 @@ warnings.filterwarnings('ignore')
 from driver import driver
 from selenium.webdriver.common.by import By
 import re
-import json
+# import json
 
 def parsePage(links):
     feature_configs = dict()
@@ -54,7 +54,4 @@ def parsePage(links):
                             lst.append(re.sub("\n", "", result))
                         feature_configs[heading.text] = lst
 
-        json_object = json.dumps(feature_configs, indent = 4) 
-        with open("json/trial.json", "w") as f:
-            f.write(json_object)
-            f.close()
+        return feature_configs
