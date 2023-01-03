@@ -2,3 +2,4 @@ selenium==4.3.0
 streamlit==1.11.0
 seleniumbase
 webdriver-manager
+json2html
