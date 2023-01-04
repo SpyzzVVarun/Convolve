@@ -1,4 +1,5 @@
 selenium
 streamlit
+json2html
 seleniumbase
 webdriver-manager
