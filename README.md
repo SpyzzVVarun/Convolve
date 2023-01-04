@@ -26,7 +26,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  pip install requirements.txt
+  pip install -r requirements.txt
 ```
 
 Start the server
@@ -34,11 +34,14 @@ Start the server
 ```bash
   streamlit run app.py
 ```
+Note: \
+You must have Chrome installed to run the app.
 
 
 ## Screenshots
 
-![App Screenshot]()
+![App Screenshot](https://github.com/aryanlath/Convolve/blob/Updated/images/Screenshot%202023-01-04%20at%2010.10.52%20PM.png)
+![App Screenshot](https://github.com/aryanlath/Convolve/blob/Updated/images/Screenshot%202023-01-04%20at%2010.10.21%20PM.png?raw=true)
 
 
 ## Authors
