@@ -38,7 +38,7 @@ Start the server
 
 ## Screenshots
 
-![App Screenshot](https://github.com/aryanlath/Convolve/blob/Updated/images/Screenshot%202023-01-04%20at%2010.10.21%20PM.png?raw=true)
+![App Screenshot](https://github.com/aryanlath/Convolve/blob/Updated/images/Screenshot%202023-01-04%20at%2010.10.52%20PM.png)
 ![App Screenshot](https://github.com/aryanlath/Convolve/blob/Updated/images/Screenshot%202023-01-04%20at%2010.10.21%20PM.png?raw=true)
 
 
