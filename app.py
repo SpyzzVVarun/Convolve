@@ -5,14 +5,17 @@ import json
 from json2html import *
 import os
 
+def clear_text():
+    st.session_state["text"] = ""
+
 def addFeatures(option):
     if option == 'Direct Web Page':
-        os_name = st.text_input('Enter OS')
-        url = st.text_input('Enter Web Page URL')
+        os_name = st.text_input('Enter OS', key = "text")
+        url = st.text_input('Enter Web Page URL', key = "text")
         
     elif option == 'Config Guide Link':
-        os_name = st.text_input('Enter OS')
-        url = st.text_input('Enter Config Guide URL')
+        os_name = st.text_input('Enter OS', key = "text")
+        url = st.text_input('Enter Config Guide URL', key = "text")
 
     bt1 = st.button("Update Database")
 
@@ -40,6 +43,7 @@ def addFeatures(option):
             json.dump(old_dict, f)
             f.close()
         st.success("Updated Database")
+        bt4 = st.button("Re-Run", on_click=clear_text)
 
 st.title('Cisco Config Guides Databases')
 
@@ -51,10 +55,13 @@ if option1 == "Update":
     addFeatures(option2)
 
 elif option1 == 'View':
-    os_name = st.text_input('Enter OS')
-    if os.path.exists(f"databases/{os_name}/configs.json"):
-        with open(f"databases/{os_name}/configs.json", "r") as f:
-            feature_configs = json.load(f)
-        json_object = json.dumps(feature_configs, indent = 4)
-        html_code = json2html.convert(json = json_object)
-        st.markdown(html_code, unsafe_allow_html=True)
+    os_name = st.text_input('Enter OS', key = "text")
+    bt2 = st.button("View Database")
+    if (bt2):
+        if os.path.exists(f"databases/{os_name}/configs.json"):
+            with open(f"databases/{os_name}/configs.json", "r") as f:
+                feature_configs = json.load(f)
+            json_object = json.dumps(feature_configs, indent = 4)
+            html_code = json2html.convert(json = json_object)
+            st.markdown(html_code, unsafe_allow_html=True)
+            bt3 = st.button("Re-Run", on_click=clear_text)
