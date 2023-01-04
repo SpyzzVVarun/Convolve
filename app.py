@@ -13,7 +13,7 @@ def addFeatures(option):
         os_name = st.text_input('Enter OS', key = "text")
         url = st.text_input('Enter Web Page URL', key = "text")
         
-    elif option == 'Config Guide Link':
+    elif option == 'Config Guide Link (Beta Testing)':
         os_name = st.text_input('Enter OS', key = "text")
         url = st.text_input('Enter Config Guide URL', key = "text")
 
@@ -24,7 +24,7 @@ def addFeatures(option):
             os.mkdir(f"databases/{os_name}/")
         except:
             pass
-        if option == 'Config Guide Link':
+        if option == 'Config Guide Link (Beta Testing)':
             links = get_landing_links(url)
         else:
             links = [url]
@@ -51,7 +51,7 @@ option1 = st.sidebar.radio("Update Database or View Database?", ("Update", "View
 
 
 if option1 == "Update":
-    option2 = st.radio("How would you like to add features?", ("Direct Web Page", "Config Guide Link"))
+    option2 = st.radio("How would you like to add features?", ("Direct Web Page", "Config Guide Link (Beta Testing)"))
     addFeatures(option2)
 
 elif option1 == 'View':
