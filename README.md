@@ -34,6 +34,8 @@ Start the server
 ```bash
   streamlit run app.py
 ```
+Note: \
+You must have Chrome installed to run the app.
 
 
 ## Screenshots
