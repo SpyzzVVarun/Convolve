@@ -26,7 +26,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  pip install requirements.txt
+  pip install -r requirements.txt
 ```
 
 Start the server
@@ -38,7 +38,8 @@ Start the server
 
 ## Screenshots
 
-![App Screenshot]()
+![App Screenshot](https://github.com/aryanlath/Convolve/blob/Updated/images/Screenshot%202023-01-04%20at%2010.10.21%20PM.png?raw=true)
+![App Screenshot](https://github.com/aryanlath/Convolve/blob/Updated/images/Screenshot%202023-01-04%20at%2010.10.21%20PM.png?raw=true)
 
 
 ## Authors
