@@ -1,15 +1,14 @@
-# from constants import driver_path, brave_path
 # from selenium import webdriver
 # from selenium.webdriver.chrome.service import Service as BraveService
 # from webdriver_manager.chrome import ChromeDriverManager
 # from webdriver_manager.core.utils import ChromeType
 
-# # Define Brave path
 # options = webdriver.ChromeOptions()
-# options.binary_location = brave_path
+# options.add_argument("--start-maximized")
+# options.add_argument('--log-level=3'
 
-# # Create new automated instance of Brave
-# driver = webdriver.Chrome(service=BraveService(ChromeDriverManager(chrome_type=ChromeType.BRAVE).install()),options = options)
+# # Create new automated instance of Chrome
+# driver = webdriver.Chrome(executable_path="chromedriver", chrome_options=options)
 
 import streamlit as st
 from selenium import webdriver
