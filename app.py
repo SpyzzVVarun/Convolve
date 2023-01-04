@@ -6,16 +6,20 @@ from json2html import *
 import os
 
 def clear_text():
-    st.session_state["text"] = ""
+    st.session_state["text1"] = ""
+    st.session_state["text2"] = ""
+    st.session_state["text3"] = ""
+    st.session_state["text4"] = ""
+    st.session_state["text5"] = ""
 
 def addFeatures(option):
     if option == 'Direct Web Page':
-        os_name = st.text_input('Enter OS', key = "text")
-        url = st.text_input('Enter Web Page URL', key = "text")
+        os_name = st.text_input('Enter OS', key = "text1")
+        url = st.text_input('Enter Web Page URL', key = "text2")
         
     elif option == 'Config Guide Link (Beta Testing)':
-        os_name = st.text_input('Enter OS', key = "text")
-        url = st.text_input('Enter Config Guide URL', key = "text")
+        os_name = st.text_input('Enter OS', key = "text3")
+        url = st.text_input('Enter Config Guide URL', key = "text4")
 
     bt1 = st.button("Update Database")
 
@@ -55,7 +59,7 @@ if option1 == "Update":
     addFeatures(option2)
 
 elif option1 == 'View':
-    os_name = st.text_input('Enter OS', key = "text")
+    os_name = st.text_input('Enter OS', key = "text5")
     bt2 = st.button("View Database")
     if (bt2):
         if os.path.exists(f"databases/{os_name}/configs.json"):
