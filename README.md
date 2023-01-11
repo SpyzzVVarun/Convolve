@@ -82,7 +82,8 @@ options.add_argument('--headless')
 
 ## Authors
 
+- [@SpyzzVVarun](https://github.com/SpyzzVVarun)
 - [@aditya-gupta-04](https://github.com/aditya-gupta-04)
 - [@aryanlath](https://github.com/aryanlath)
 - [@devansh-bhardwaj](https://github.com/devansh-bhardwaj)
-- [@SpyzzVVarun](https://github.com/SpyzzVVarun)
+
