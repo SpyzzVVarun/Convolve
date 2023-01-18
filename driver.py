@@ -5,7 +5,7 @@
 
 # options = webdriver.ChromeOptions()
 # options.add_argument("--start-maximized")
-# options.add_argument('--log-level=3'
+# options.add_argument('--log-level=3')
 
 # # Create new automated instance of Chrome
 # driver = webdriver.Chrome(executable_path="chromedriver", chrome_options=options)
