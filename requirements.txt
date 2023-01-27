@@ -3,3 +3,5 @@ streamlit
 json2html
 seleniumbase
 webdriver-manager
+fuzzywuzzy
+python-Levenshtein
